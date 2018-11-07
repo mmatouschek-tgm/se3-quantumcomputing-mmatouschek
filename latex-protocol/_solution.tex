@@ -1,221 +1,49 @@
 %!TEX root=../protocol.tex	% Optional
 
-\section{Konfiguration}
-\subsection{Optionen}
-\begin{tabularx}{\textwidth}{l X}
-{\small \verb|landscape|}    & Richte das Dokument vertikal aus.\\
-{\small \verb|minted|}       & Nutze das \texttt{minted} Paket zur Quelltextdarstellung.\\
-{\small \verb|natbib|}       & Nutze NatBib zur Literaturverwaltung.\\
-{\small \verb|nobib|}        & Deaktiviere die Literaturverwaltung.\\
-{\small \verb|nofonts|}      & Nutze die Standard \LaTeX ~Schriftarten.\\
-{\small \verb|noglo|}        & Deaktiviere Akronyme und das Glossar.\\
-{\small \verb|nologos|}      & Zeichne keine Logos auf der Titelseite.\\
-{\small \verb|notitle|}      & Zeichne keine Titelseite.\\
-{\small \verb|notoc|}        & Zeichne kein Inhaltsverzeichnis.\\
-{\small \verb|notable|}      & Zeichne keine Tabelle auf der Titelseite.
-\end{tabularx}
-
-\subsection{Variablen}
-Variablen werden über Kommandos gesetzt, die als Parameter den gewünschten Wert erhalten.
-\begin{center}
-    \ifminted   \codein{tex}{\myvariable{value}}
-    \else       \codein{tex}{\\myvariable\{value\}}\fi
-\end{center}
-
-\begin{tabular}{l l}
-\textbf{Kommando} & \textbf{Inhalt}\\
-
-{\small \verb|mysubtitle|} 	& Untertitel oder Zugehörigkeit\\
-{\small \verb|mysubject|} 	& Thema / Fach, welches bearbeitet wird\\
-{\small \verb|mycourse|} 	& Kurs / Klasse welche(r) besucht wird\\
-{\small \verb|myteacher|} 	& Betreuende Lehrkraft\\
-{\small \verb|myversion|} 	& Aktuelle Version des Dokuments\\
-{\small \verb|mybegin|} 	& Datum des Beginns\\
-{\small \verb|myfinish|} 	& Datum an dem die Arbeit beendet wurde
-\end{tabular}
-
+\section{Introduction}
+Quantum computing is a technical field that has been advancing over the past decades. Beginning in 1980s, quantum computing evolved into a technology that big companies (Microsoft, IBM, Amazon) invest resources into, to further progress it. But what exactly is quantum computing and why does it gain more and more importance?
+Quantum computers have some similarities and some differences to classical computers. The fundamental basis to this technology is the rules and principles of Quantum Theory, which explain the behavior of energy and matter on a quantum level. To understand how a quantum computer functions, a certain understanding of quantum physics has to be gained first. 
+\subsection{Principles of the Quantum Theory}
+To get a deep understanding of this technology, a basis of knowledge regarding quantum physics has to be established. The most important principles needed for quantum computing will be explained briefly.
+\subsubsection{Superposition}
+In 1927 Niels Bohr formulated the principles of Complementarity. It holds that there are pairs of complementary properties to objects that cannot be observed or measured simultaneously. Furthermore he states that properties of particles cannot be assumed to have a certain value, or even exist, until they are measured. This leads to a principle called 'Superposition'. Since a property cannot be assumed to have a specific value, we cannot know the actual state and it can be considered to hold all the values at once, as long as it is not measured. This is what is called  'being in Superposition'. An example for this would be the well known 'Schrödinger's Cat'. In this thought experiment, a cat is put into an enclosed box that contains a vial of deadly poison, some radioactive material and a geiger counter. The poison is released once the geiger counter detects radioactivity (i.e. when a single atom decays). It is impossible to know whether the cat has died or not, which can be seen as the cat being dead and alive simultaneously. The cat is in superposition until the box is opened and examined.
+\subsubsection{Quantum entanglement}
+Quantum entanglement describes a phenomenon in which quantum states of 2 or more particles are connected to each other. Measuring the state of one of the particles will provide information about the other and vice versa. This connection is not locally bound, it still remains even over great distances and happens instantaneously, which means that it is not limited by the speed of light. As an example, if two particles are entangled and one of them is measured to have an 'up' spin, the other one will have a 'down' spin. Information about a particle can be acquired without having to measure it, which can be used as an advantage in quantum computers.
 \newpage
-\section{Kommandos}\label{sec:Kommandos}
-\subsection{\texttt makefig}
+\subsection{General structure of quantum computers}
+\subsubsection{Qubits}
+\subsubsection{Quantum register}
+\subsubsection{Quantum gates}
+Paper introducing Quantum Computation and fault tolerance \cite{2015arXiv150803695P}
+\section{Current physical limitations}
 
-\begin{listing}
-\begin{code}{tex}
-\makefig{images/logo-right.png}{height=2cm}{
-    Mit Beschreibung und Label  % (Optional)
-}{
-    fig:caption-label           % (Optional)
-}
-\end{code}
-\caption{\texttt makefig}
-\label{lst:makefig}
-\end{listing}
-\makefig{images/logo-right.png}{height=2cm}{Mit Beschreibung und Label}{fig:caption-label}
+\textit{For small scale quantum computers, it is sufficient to consider the five basic DiVincenzo criteria: ability to add qubits, highfidelity initialization and measurement, low decoherence, and a universal set of quantum gates. However, these criteria are insufficient for a large-scale quantum computer. DiVincenzo’s added two communications criteria — the ability to convert between stationary and mobile qubit representations, and to faithfully transport the mobile ones from one location to another and convert back to the stationary representation — are also critical, but so is gate speed ('clock rate'), the parallel execution of gates, the necessity for feasible large-scale classical control systems and feed-forward control, and the overriding issues of manufacturing, including the reproducibility of structures that affect key tuning parameters.} \cite{2009arXiv0906.2686V}
 
-\subsection{\texttt vardef}
-\begin{listing}
-\begin{code}{tex}
-$$e^{i*\pi} = -1$$
-\end{code}
+Papers focusing on quantum computer architecture  \cite{2012PhRvX...2c1007J}
 
-$$e^{i*\pi} = -1$$
+Paper focusing on natural limitations of quantum computing
+Deeper explanation of problems appearing in a physical context
+\subsection{Decoherence}
+Short overview on what quantum decoherence is, why it happens and why prevention is necessary
+\subsection{Relaxation}
+Short overview on quantum relaxation and how it affects quantum computing
 
-\begin{code}[firstnumber=last]{tex}
-\begin{vardef}
-    \addvardef{$e$}{Eulersche Zahl}
-    \addvardef{$\pi$}{Kreiszahl}
-    \addvardef{$i$}{Imagin\"are Einheit}
-\end{vardef}
-\end{code}
+\section{Techonological methods to prevent decoherence}
 
-\begin{vardef}
-    \addvardef{$e$}{Eulersche Zahl}
-    \addvardef{$\pi$}{Kreiszahl}
-    \addvardef{$i$}{Imaginäre Einheit}
-\end{vardef}
+Information about fault tolerance \cite{2015arXiv150803695P}
+\subsection{Quantum correcting code}
 
-\caption{\texttt vardef}
-\label{lst:vardef}
-\end{listing}
+Information about quantum error correction \cite{2009arXiv0904.2557G}
+\section{Approaches to solutions}
+Proposing solutions to stated problems
 
-\newpage
-\section{Anwendung}\label{sec:Anwendung}
-Hier sollen die Schritte der Laborübung erläutert werden. Hier sind alle Fragestellungen der Lehrkraft zu beantworten. Etwaige Probleme bzw. Schwierigkeiten sollten ebenfalls hier angeführt werden.
+Architectures minimizing errors \cite{2009arXiv0906.2686V} \cite{2012PhRvX...2c1007J}
+\section{Future advancements}
+How possible solutions might be implemented in the future and what might be possible/plausible.
 
-In diesem Fall werden einige \LaTeX-Elemente dokumentiert, welche bei der Kreation von Protokollen behilflich sein könnten.
+\section{Conclusion}
+Conclusion of paper and possibly answer to proposed question
 
-\subsection{Tabellen}
-\begin{table}[H]
-	\center
-	\begin{tabular}{| c | l |}
-		\hline Header 	& Kopf\\ \hline\hline
-		\textbf{Lorem} 	& Ipsum dolor sit amet, consetetur sadipscing elitr\\ \hline
-		\textbf{Ipsum} 	& At vero eos et accusam et justo duo dolores et ea rebum.\\
-						& Stet clita kasd gubergren, no sea takimata sanctus\\ \hline
-		\textbf{Dolor} 	& Consetetur sadipscing elitr, sed diam nonumy\\\hline
-	\end{tabular}
-	\caption{Tabular}
-	\label{tab:tabular}
-\end{table}
+Estimated hours of work: 12-14h
 
-\subsubsection{TabularX}
-TabularX erlaubt die Angabe der Größe der Tabelle und bietet zudem den Reihentyp \texttt{X}, der die verbleibende Größe neben anderen Reihen mit anderen \texttt{X} Reihen teilt.
-\\\\
-ACHTUNG: Die Verwendung von \verb|\codein|, \verb|\mintinline| oder \verb|\lstinline| ist in einer TabularX Umgebung nicht möglich!
-\begin{table}
-    \center
-    \begin{tabularx}{\textwidth}{| c | X |}
-        \hline Header 	& Kopf\\ \hline\hline
-        \textbf{Lorem} 	& Ipsum dolor sit amet, consetetur sadipscing elitr\\ \hline
-        \textbf{Ipsum} 	& At vero eos et accusam et justo duo dolores et ea rebum.\\
-            			& Stet clita kasd gubergren, no sea takimata sanctus\\ \hline
-        \textbf{Dolor} 	& Consetetur sadipscing elitr, sed diam nonumy\\\hline
-    \end{tabularx}
-    \caption{TabularX}
-    \label{tab:tabularx}
-\end{table}
-
-\newpage
-\subsection{Aufzählung}
-\begin{itemize}
-	\item Element einer Aufzählung
-	\begin{itemize}
-        \item Erstes eingerücktes Element einer Aufzählung
-        \item Zweites eingerücktes Element einer Aufzählung
-    \end{itemize}
-\end{itemize}
-
-\subsubsection{Outlines}
-\begin{outline}
-    \1 Element einer Aufzählung
-        \2 Erstes eingerücktes Element einer Aufzählung
-        \2 Zweites eingerücktes Element einer Aufzählung
-\end{outline}
-
-\subsection{Glossar}
-Zur Verwaltung des Glossars wird standardmäßig die Datei \texttt{glossaries.tex} verwendet, wobei sowohl Definitionen als auch Akronyme definiert werden können.
-\\\\
-Als Beispiel wurde ein Akronym für \gls{ac-syt} und eine Definition zu \gls{ac-syt} selbst hinzugefügt.
-
-\begin{listing}
-\inputcode{tex}{glossaries.tex}
-\caption{Glossareintrag}
-\label{lst:glossaries}
-\end{listing}
-~\\
-Im Dokument selbst kann ein Akronym mittels \verb|\gls{ac-syt}| verwendet werden. Beachte, dass ein Akronym welches bereits im Dokument verwendet wurde, bei der ersten Verwendung ausgeschrieben und danach immer gekürzt wird.
-\\\\
-Mit \verb|\gls{syt}| kann zum Beispiel eine Referenz zur Definition von \gls{syt} hinzugefügt werden.
-
-\subsection{Zitate}
-Zitate sollten gesammelt in der Datei \texttt{bib.bib} verwaltet werden.
-
-\newpage
-\subsection{Quelltext}
-\begin{listing}
-\ifminted   \mint{tex}|\begin{code}[]{java}|    % Escape \ for lstlistings
-\else       \lstinline[numbers=left, language=tex]$\begin{code}[]{java}$\fi
-\begin{code}[firstnumber=last]{java}
-// Ich bin ein Kommantar!
-public static void main(String[] args) {
-    System.out.println("Ich bin ein Array!")
-}
-\end{code}
-\ifminted   \mint[firstnumber=last]{tex}|\end{code}|    % Escape \ for lstlistings
-\else       \lstinline[firstnumber=last, numbers=left, language=tex]$\end{code}$\fi
-
-\caption{Java Code}
-\label{lst:java-code}
-\end{listing}
-~\\
-Die Darstellung von Quelltext im Text ist über das Kommando \verb|\codein[options]{lang}{code}| möglich.
-
-\subsubsection{Listings}
-\begin{listing}
-\ifminted   \mint{tex}|\begin{lstlisting}[language=Java, caption=Java Lstlisting]|
-\else       \lstinline[numbers=left, language=tex]$\begin{lstlisting}[language=Java, caption=Java Lstlisting]$\fi
-\begin{code}[firstnumber=last]{java}
-// Ich bin ein Kommantar!
-public static void main(String[] args) {
-    System.out.println("Ich bin ein Array!")
-}
-\end{code}
-\ifminted   \mint[firstnumber=last]{tex}|\end{lstlisting}|
-\else       \lstinline[firstnumber=last, numbers=left, language=tex]$\end{lstlisting}$\fi
-\caption{Java Lstlisting}
-\label{lst:java-lstlisting}
-\end{listing}
-
-\newpage
-\subsubsection{Minted}
-Benötigt die Option \texttt{minted}.
-\paragraph{Umgebung}~\\
-\begin{listing}
-\ifminted   \mint{tex}|\begin{minted}[options]{java}|
-\else       \lstinline[numbers=left, language=tex]$\begin{minted}[]{java}$\fi
-\begin{code}[firstnumber=last]{java}
-// Ich bin ein Kommantar!
-public static void main(String[] args) {
-    System.out.println("Ich bin ein Array!")
-}
-\end{code}
-\ifminted   \mint[firstnumber=last]{tex}|\end{minted}|
-\else       \lstinline[firstnumber=last, numbers=left, language=tex]$\end{minted}$\fi
-\caption{Minted Umgebung}
-\label{lst:minted-env}
-\end{listing}
-
-\paragraph{Zeile}~\\
-\begin{listing}
-\ifminted   \mint{tex}$\mint[options]{lang}|code|$
-\else       \lstinline[language=tex]$\mint[options]{lang}|code|$\fi
-\caption{Minted Einzeiler}
-\label{lst:minted-line}
-\end{listing}
-
-\begin{listing}
-\begin{code}{tex}
-\mintinline[options]{lang}{code}
-\end{code}
-\caption{Minted Inline}
-\label{lst:minted-inline}
-\end{listing}
+\nocite{*}
